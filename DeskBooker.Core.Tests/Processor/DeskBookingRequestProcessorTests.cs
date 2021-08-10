@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DeskBooker.Core.Domain;
+using DeskBooker.Core.Processor;
+using System;
 using Xunit;
 
 namespace DeskBooker.Core.Tests.Processor

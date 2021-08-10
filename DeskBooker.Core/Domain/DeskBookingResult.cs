@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace DeskBooker.Core.Tests.Processor
+namespace DeskBooker.Core.Domain
 {
-    internal class DeskBookingRequest
+    public class DeskBookingResult
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
