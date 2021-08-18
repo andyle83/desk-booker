@@ -66,6 +66,12 @@ namespace DeskBooker.Core.Processor
 
             // Verify save is called
             _deskBookingRepositoryMock.Verify(X => X.Save(It.IsAny<DeskBooking>()), Times.Once);
+
+            Assert.NotNull(savedDeskBooking);
+            Assert.Equal(_request.FirstName, savedDeskBooking.FirstName);
+            Assert.Equal(_request.LastName, savedDeskBooking.LastName);
+            Assert.Equal(_request.Email, savedDeskBooking.Email);
+            Assert.Equal(_request.Date, savedDeskBooking.Date);
         }
     }
 }
