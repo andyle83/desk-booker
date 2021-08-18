@@ -4,6 +4,6 @@ namespace DeskBooker.Core.Domain
 {
     public class DeskBooking : DeskBookkingBase
     {
-        public int Id { get; set; }
+        public int DeskId { get; set; }
     }
 }

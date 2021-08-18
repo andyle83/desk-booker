@@ -81,7 +81,7 @@ namespace DeskBooker.Core.Processor
             Assert.Equal(_request.LastName, savedDeskBooking.LastName);
             Assert.Equal(_request.Email, savedDeskBooking.Email);
             Assert.Equal(_request.Date, savedDeskBooking.Date);
-            Assert.Equal(_availableDesks.First().Id, savedDeskBooking.Id);
+            Assert.Equal(_availableDesks.First().Id, savedDeskBooking.DeskId);
         }
 
         [Fact]

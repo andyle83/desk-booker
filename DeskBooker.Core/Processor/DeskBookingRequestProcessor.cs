@@ -1,6 +1,7 @@
 ﻿using DeskBooker.Core.DataInterface;
 using DeskBooker.Core.Domain;
 using System;
+using System.Linq;
 
 namespace DeskBooker.Core.Processor
 {
@@ -26,7 +27,12 @@ namespace DeskBooker.Core.Processor
 
             if (availableDesks.Count > 0)
             {
-                _deskBookingRepository.Save(Create<DeskBooking>(request));
+                var availableDesk = availableDesks.First();
+                var deskBooking = Create<DeskBooking>(request);
+
+                deskBooking.DeskId = availableDesk.Id;
+
+                _deskBookingRepository.Save(deskBooking);
             }
 
             return Create<DeskBookingResult>(request);
