@@ -6,6 +6,6 @@ namespace DeskBooker.Core.Processor
 {
     public interface IDeskRepository
     {
-        public IEnumerable<Desk> GetAvailableDesk(DateTime date);
+        public List<Desk> GetAvailableDesk(DateTime date);
     }
 }

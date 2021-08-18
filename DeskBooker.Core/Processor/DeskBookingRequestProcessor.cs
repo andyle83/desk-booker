@@ -22,7 +22,12 @@ namespace DeskBooker.Core.Processor
                 throw new ArgumentNullException(nameof(request));
             }
 
-            _deskBookingRepository.Save(Create<DeskBooking>(request));
+            var availableDesks = _deskRepository.GetAvailableDesk(request.Date);
+
+            if (availableDesks.Count > 0)
+            {
+                _deskBookingRepository.Save(Create<DeskBooking>(request));
+            }
 
             return Create<DeskBookingResult>(request);
         }
