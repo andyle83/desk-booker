@@ -23,7 +23,7 @@ namespace DeskBooker.Core.Processor
                 throw new ArgumentNullException(nameof(request));
             }
 
-            var availableDesks = _deskRepository.GetAvailableDesk(request.Date);
+            var availableDesks = _deskRepository.GetAvailableDesks(request.Date);
             var bookingResult = Create<DeskBookingResult>(request);
 
             if (availableDesks.FirstOrDefault() is Desk availableDesk)

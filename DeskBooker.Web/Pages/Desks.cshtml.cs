@@ -1,0 +1,24 @@
+﻿using DeskBooker.Core.Domain;
+using DeskBooker.Core.Processor;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Collections.Generic;
+
+namespace DeskBooker.Web.Pages
+{
+    public class DesksModel : PageModel
+    {
+        private readonly IDeskRepository _deskRepository;
+
+        public DesksModel(IDeskRepository deskRepository)
+        {
+            _deskRepository = deskRepository;
+        }
+
+        public IEnumerable<Desk> Desks { get; set; }
+
+        public void OnGet()
+        {
+            Desks = _deskRepository.GetAll();
+        }
+    }
+}
