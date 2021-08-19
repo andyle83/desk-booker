@@ -8,6 +8,7 @@ using System.Linq;
 
 namespace DeskBooker.DataAccess.Repositories
 {
+    [Ignore]
     [TestClass]
     public class DeskBookingRepositoryTests
     {
